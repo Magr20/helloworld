@@ -56,7 +56,6 @@ bool esNumero(char a){
 
 bool esLetra(char a){
     int n = static_cast<int>(a);
-    cout<<n<<endl;
     if ((n>=65 && n<=90)||(n>=97 && n<=122))
         return true;
     return false;
@@ -76,17 +75,17 @@ int main()
 
     //imprimirDigitos(n);
     //cout << contarDigitos(n);
-    //cout<< (esPalindromo(n)? "Es palindromo" : "No es palindromo") <<endl;//Corregir
+    //cout<< (esPalindromo(n)? "Es palindromo" : "No es palindromo") <<endl;
     //cout << calcularFib(n);
-    //cout << esNumero(n);
-
+    cout<< (esNumero(n)? "Es NUMERO" : "No es NUMERO") <<endl;
+    /**
     if (esLetra(n))
         cout << may_Min(n);
     else if (esNumero(n))
         cout << "Es numero" << endl;
     else
         cout << "No es numero ni letra" << endl;
-
+    */
     return 0;
 }
 
