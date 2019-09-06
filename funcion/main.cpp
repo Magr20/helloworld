@@ -56,6 +56,7 @@ bool esNumero(char a){
 
 bool esLetra(char a){
     int n = static_cast<int>(a);
+    cout<<n<<endl;
     if ((n>=65 && n<=90)||(n>=97 && n<=122))
         return true;
     return false;
@@ -69,7 +70,8 @@ char may_Min(char n){
 
 int main()
 {
-    int n;
+    //int n;
+    char n;
     cin >> n;
 
     //imprimirDigitos(n);
