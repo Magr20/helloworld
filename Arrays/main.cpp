@@ -59,6 +59,26 @@ void insertionSort(int x[],int tam,int aux=0){
     //ordenBurbuja(x,tam);
 }
 
+void tryToSort(int x[],int tamano,int inicio=0){
+    //find best pivot
+    if (tamano/2>2)
+        tryToSort(x,tamano/2,0);
+    int pivot=inicio;
+    int border=inicio+1;
+    for (int i=inicio;i<tamano;i++)//encuentra un numero mayor para usarlo de border y hacer el swap
+        if (x[i]>x[pivot]){
+        }
+    for (int i=2;i<tamano&&border<tamano;i++){//poner a la izquierda los menores del pivote
+        if (x[i]<x[pivot]){
+            swap(x[border],x[i]);
+            border++;
+        }
+    }
+    swap(x[pivot],x[border]);
+    if (tamano-border>2)
+        tryToSort(x,tamano,border--);
+    //particionYordenar(x,tamano,border);
+}
 
 int main()
 {
