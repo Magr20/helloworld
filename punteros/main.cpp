@@ -37,13 +37,29 @@ void invertirIterativo(int *x,int tam){
         tam--;
     }
 }
-void invertirRecursivo(int *x, int tam,int i=0){
-    cout<<*x<<" "<<*(x+(tam-i))<<endl;
-    swap(*x,*(x+(tam-i)));
-    if (i<tam/2)
-        invertirRecursivo(++x,tam,++i);
+void invertirRecursivo(int *x, int tam, int i=0){
+    swap(*(x+i),*(x+tam-i-1));
+    if (i< tam/2-1 )
+        invertirRecursivo(x,tam,++i);
 }
 
+void ordenBurbuja(int *x,int tam){
+    for (int i=0;i<tam-1;i++){
+        for (int j=i+1;j<tam;j++)
+            if (*(x+i)>*(x+j))
+                swap(*(x+i),*(x+j));
+    }
+}
+
+void insertionSort(int *x,int tam,int aux=0){
+    for (int i=1;i<tam;i++){
+        for (int j=i-1;j>=0;j--)
+            if (*(x+i)<*(x+j)){
+                swap(*(x+i),*(x+j));
+                i--;
+            }
+    }
+}
 
 
 int main()
