@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1572446397 source:d:\mariacruz\problema1\main.cpp
+	<iostream>
+	"empleado.h"
+	<string>
+
+1572446405 source:d:\mariacruz\problema1\src\empleado.cpp
+	"empleado.h"
+
+1572446397 d:\mariacruz\problema1\include\empleado.h
+	<iostream>
+	<string.h>
+
