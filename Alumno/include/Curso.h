@@ -6,7 +6,7 @@ class Curso
 {
     public:
         Curso();
-        //Curso();
+        Curso(Curso &o);
         Curso(string,string,Estudiante* puntero, int);
         //Constructor copia
         virtual ~Curso();
