@@ -6,22 +6,22 @@ using namespace std;
 
 int main()
 {
-    vector <Estudiante> Listado;
-    vector <Estudiante> Listado2;
+
     Estudiante uno("Sol","Velasquez","QWDIO"),dos("Camila","Luque","ABDJF");
     cout <<uno.getNombre()<<" "<<uno.getApellido()<<" "<<uno.getCodigo()<< endl;
     cout <<dos.getNombre()<<" "<<dos.getApellido()<<" "<<dos.getCodigo()<< endl;
-    Listado.push_back(uno);
-    Listado.push_back(dos);
-    Listado2.push_back(dos);
+    Estudiante Listado2[]={dos};
+    Estudiante Listado[]={uno,dos};
 
-    Curso primero("Comida","nirvbw",Listado,2),segundo("Comida2","nifdArvbw",Listado2,1);
+    cout <<endl<<"CURSOS"<<endl;
+    Curso primero("Mate","nirvbw",Listado,2),segundo("Discretas","nifdArvbw",Listado2,1);
     primero.setCantidad(1);
     primero.incrementoEstudiante();
-    cout<<primero.getNombre()<<primero.getCodigo()<<primero.getDireccion()<<primero.getCantidad()<<endl;
+    cout<<"Nombre: "<<primero.getNombre()<<", Codigo: "<<primero.getCodigo()<<endl;
+    cout<<"Direccion: "<<primero.getDireccion()<<", Cantidad: "<<primero.getCantidad()<<endl;
     segundo.setCantidad(0);
     segundo.incrementoEstudiante();
-    cout<<segundo.getNombre()<<segundo.getCodigo()<<segundo.getDireccion()<<segundo.getCantidad()<<endl;
-
+    cout<<"Nombre: "<<segundo.getNombre()<<", Codigo: "<<segundo.getCodigo()<<endl;
+    cout<<"Direccion: "<<segundo.getDireccion()<<", Cantidad: "<<segundo.getCantidad()<<endl;
     return 0;
 }
