@@ -23,7 +23,7 @@ class Mamifero :public Animal{
         Mamifero(string nombre_,double _peso, bool _tail):
             Animal(nombre_, _peso),cola(_tail){}
         void imprimirExtra(){
-            cout<<(cola?"Tiene cola":"No tiene cola")<<endl;
+            cout<<nombreAnimal<<(cola?" Tiene cola":" No tiene cola")<<endl;
         }
     private:
         bool cola;
@@ -34,7 +34,7 @@ class Ave :public Animal{
         Ave(string nombre_,double _peso, int _alas):
             Animal(nombre_, _peso),tamanoAlas(_alas){}
         void imprimirExtra(){
-            cout<<"Tamano Alas: "<<tamanoAlas<<endl;
+            cout<<nombreAnimal<<" Tamano Alas: "<<tamanoAlas<<endl;
         }
     private:
         int tamanoAlas;
@@ -44,9 +44,17 @@ int main()
 {
     Mamifero perro("Bobby",54,1);
     perro.imprimirDatos();
-    perro.imprimirExtra();
+
+
+    cout<<endl;
     Ave canario("Piolin",5,4);
     canario.imprimirDatos();
-    canario.imprimirExtra();
+    cout<<endl;
+
+    Mamifero* p=&perro;
+    Ave* c=&canario;
+    p->imprimirExtra();
+    c->imprimirExtra();
+
     return 0;
 }
