@@ -62,6 +62,32 @@ void insertionSort(int *x,int tam,int aux=0){
     }
 }
 
+void quickSorts(int *x,int tamano,int i=0){
+    int inicio=i;
+    int j=tamano-1;
+    int pivotePos=(j+i)/2;
+    int pivote=*(x+pivotePos);
+    while (j>i){
+        if (*(x+i)<pivote)
+            i++;
+        else{
+            while (*(x+j)>pivote&&j>inicio)
+                j--;
+            swap(*(x+j),*(x+i));
+            if (pivotePos==j) pivotePos=i;
+            else if (pivotePos==i) pivotePos=j;
+            j--;
+            i++;
+        }
+    }
+    if (pivotePos>1){
+        quickSorts(x,pivotePos,0);
+    }
+    if (tamano-pivotePos>2){
+        quickSorts(x,tamano,pivotePos+1);
+    }
+}
+
 int main()
 {
     int arreglo[]={7,9,12,4,3,8,10};
@@ -72,4 +98,7 @@ int main()
     cout << sumaRecursiva(arreglo,tam)<<endl;
     cout << sumaIterativa(arreglo,tam)<<endl;
     return 0;
+    int x[]={9,6,5,4,21,8,4,6,2,5,7,20};
+    quickSorts(x,sizeof x /4);
+    printArray(x,sizeof x /4);
 }

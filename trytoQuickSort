@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+void printArray(const int *x,const int tamano){
+    cout << endl;
+    for (int i=0;i<tamano;i++)
+        cout<<*(x+i)<<" ";
+}
+
+void quickSorts(int x[],int tamano,int i=0){
+    int inicio=i;
+    int j=tamano-1;
+    int pivotePos=(j+i)/2;
+    int pivote=x[pivotePos];
+    cout<<"El pivote es: "<<pivote<<endl;
+    while (j>i){
+        //printArray(x,tamano);
+        if (x[i]<pivote)
+            i++;
+        else{
+            while (x[j]>pivote&&j>inicio)
+                j--;
+            cout<<endl<<"I= "<<i<<" J= "<<j;
+            swap(x[j],x[i]);
+            if (pivotePos==j) pivotePos=i;
+            else if (pivotePos==i) pivotePos=j;
+            j--;
+            i++;
+        }
+    }
+    printArray(x,11);
+    if (pivotePos>1){
+        cout<<endl<<"RIGHT"<<" final "<<pivotePos<<" inicio "<<pivotePos+1<<endl;
+        quickSorts(x,pivotePos,0);
+    }
+    if (tamano-pivotePos>2){
+        cout<<endl<<"LEFT "<<"final "<<tamano-pivotePos+1<<" inicio "<<pivotePos+1<<endl;
+        quickSorts(x,tamano-pivotePos+1,pivotePos+1);
+    }
+}
+
+int main()
+{
+    int x[]={9,6,5,4,8,4,6,2,5,7,20};
+    quickSorts(x,sizeof x /4);
+    printArray(x,sizeof x /4);
+    return 0;
+}
