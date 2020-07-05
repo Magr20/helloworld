@@ -56,7 +56,6 @@ void insertionSort(int x[],int tam,int aux=0){
                 i--;
             }
     }
-    //ordenBurbuja(x,tam);
 }
 
 void quickSort(int x[],int pivote,int particion,int inicio=1){
@@ -74,7 +73,7 @@ void quickSort(int x[],int pivote,int particion,int inicio=1){
     if (pivote>2){
         quickSort(x,pivote/2+1,particion);
     }
-
+}
 
 int main()
 {
@@ -86,9 +85,6 @@ int main()
     //invertirIterativo(arreglo,tam);
     //invertirRecursivo(arreglo,tam);
     insertionSort(arreglo,tam);
-
-
-
     imprimirElementos(arreglo,tam);
     return 0;
 
